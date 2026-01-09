@@ -1,0 +1,152 @@
+Create a Human Nutrition main page with 7 separate sub-pages or tabs:
+
+Edible Oil
+
+Milk & Dairy
+
+Rice / FRK
+
+Flour
+
+Salt
+
+Bread, Biscuit & Bakery
+
+Breakfast Cereals
+
+Each subtype must open as:
+
+Either a separate page
+
+Or a tab-based layout with smooth transitions
+
+🧠 CONTENT INSTRUCTIONS
+
+Use the same reference content structure for all 7 subtypes
+
+Only change the heading name according to the selected subtype
+
+Keep text professional, informative, and corporate
+
+No dummy or lorem ipsum text
+
+🧱 CONTENT STRUCTURE (FOR EACH SUBTYPE PAGE)
+1️⃣ The Need
+
+Use this exact reference content:
+
+India is the largest producer of milk in the world with 146.3 million tonnes of production and per capita availability of 322 GM/day.
+
+Fortification of milk with Vitamin A and Vitamin D is required in India because of the widespread deficiencies present in the population. A National Nutrition Monitoring Bureau (NNMB) survey and a Report of the expert group of ICMR in 2012 stated that India has very high burden of Vitamin A and D deficiencies, amongst both young children and adults particularly in urban areas who are physically less active and have limited exposure to sunlight.
+
+Since milk is consumed by all, its fortification with micronutrients is a good strategy to address micronutrient malnutrition. (FSSAI)
+
+2️⃣ Advantages
+
+Display advantages in bullet points or cards:
+
+Longer lasting premix due to Microencapsulation Technology
+
+Controlled nutrient release
+
+Assured nutrient delivery
+
+Cost-effective fortification
+
+100% Vegetarian
+
+Assured & consistent quality (COA available)
+
+Safe materials (SDS available)
+
+Brand trust through Fortified Logo
+
+3️⃣ Advantages of Fortification with Ultramix
+
+Add a highlighted section explaining Ultramix benefits.
+
+4️⃣ Process Section
+➤ Process – For Liquid Product
+
+Step-by-step layout:
+
+Premix mixed with aliquot
+
+Homogenization
+
+Added to bulk product
+
+Final packaging
+
+Include “Watch Fortification Process” CTA button.
+
+➤ Process – For Dried Product
+
+Include temperature info (40–45°C)
+Mention homogenization is not required
+
+5️⃣ Product Section
+
+Create product cards:
+
+ULTRAMIX
+
+Usage: Vitamins A & D fortification
+
+Rate: 1 KG for 50 MT
+
+Packing: 1 KG (customizable)
+
+ULTRAMIX AD2E
+
+Usage: Vitamins A & D fortification
+
+Rate: 1 KG for 20 MT
+
+Packing: 1 KG (customizable)
+
+Add:
+
+“For customized specifications and packing – contact us.”
+
+6️⃣ What Makes Us Different
+
+Show as icons or feature cards:
+
+Cutting-edge Microencapsulation Technology
+
+Nitrogen-based longer shelf life
+
+Customizable solutions
+
+WHO-FAO & FSSAI compliance
+
+Safe materials (MSD available)
+
+100% Vegetarian
+
+Cost-effective solutions
+
+On-time delivery
+
+Assured quality (COA)
+
+7️⃣ Certifications Section
+
+Display logos or badges for:
+
+FSSAI
+
+Drug Control Department
+
+ISO
+
+HACCP
+
+FSSC 22000
+
+GMP
+
+HALAL
+
+Kosher
