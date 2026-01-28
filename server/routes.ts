@@ -4,6 +4,7 @@ import { storage } from "./storage";
 import { api } from "@shared/routes";
 import { z } from "zod";
 import { db } from "./db";
+import { sql } from "drizzle-orm";
 import { productCategories, products } from "@shared/schema";
 
 export async function registerRoutes(
@@ -37,38 +38,66 @@ export async function registerRoutes(
 
   // Seed data function
   async function seed() {
-    const categories = await storage.getCategories();
-    if (categories.length === 0) {
-      const [cat] = await db.insert(productCategories).values({
-        name: "Human Nutrition",
-        slug: "human-nutrition",
-      }).returning();
+    try {
+      // Ensure tables exist using raw SQL as a robust fallback
+      await db.execute(sql`
+        CREATE TABLE IF NOT EXISTS product_categories (
+          id SERIAL PRIMARY KEY,
+          name TEXT NOT NULL,
+          slug TEXT NOT NULL UNIQUE
+        );
+        CREATE TABLE IF NOT EXISTS products (
+          id SERIAL PRIMARY KEY,
+          category_id INTEGER REFERENCES product_categories(id),
+          name TEXT NOT NULL,
+          description TEXT NOT NULL,
+          usage TEXT,
+          rate TEXT,
+          packing TEXT
+        );
+        CREATE TABLE IF NOT EXISTS contact_submissions (
+          id SERIAL PRIMARY KEY,
+          name TEXT NOT NULL,
+          email TEXT NOT NULL,
+          message TEXT NOT NULL
+        );
+      `);
 
-      const subTypes = [
-        "Edible Oil", "Milk & Dairy", "Rice / FRK", "Flour", "Salt", 
-        "Bread, Biscuit & Bakery", "Breakfast Cereals"
-      ];
+      const categories = await storage.getCategories();
+      if (categories.length === 0) {
+        const [cat] = await db.insert(productCategories).values({
+          name: "Human Nutrition",
+          slug: "human-nutrition",
+        }).returning();
 
-      for (const type of subTypes) {
-        await db.insert(products).values([
-          {
-            categoryId: cat.id,
-            name: `ULTRAMIX - ${type}`,
-            description: "Vitamins A & D fortification",
-            usage: "Vitamins A & D fortification",
-            rate: "1 KG for 50 MT",
-            packing: "1 KG (customizable)",
-          },
-          {
-            categoryId: cat.id,
-            name: `ULTRAMIX AD2E - ${type}`,
-            description: "Vitamins A & D fortification",
-            usage: "Vitamins A & D fortification",
-            rate: "1 KG for 20 MT",
-            packing: "1 KG (customizable)",
-          }
-        ]);
+        const subTypes = [
+          "Edible Oil", "Milk & Dairy", "Rice / FRK", "Flour", "Salt",
+          "Bread, Biscuit & Bakery", "Breakfast Cereals"
+        ];
+
+        for (const type of subTypes) {
+          await db.insert(products).values([
+            {
+              categoryId: cat.id,
+              name: `ULTRAMIX - ${type}`,
+              description: "Vitamins A & D fortification",
+              usage: "Vitamins A & D fortification",
+              rate: "1 KG for 50 MT",
+              packing: "1 KG (customizable)",
+            },
+            {
+              categoryId: cat.id,
+              name: `ULTRAMIX AD2E - ${type}`,
+              description: "Vitamins A & D fortification",
+              usage: "Vitamins A & D fortification",
+              rate: "1 KG for 20 MT",
+              packing: "1 KG (customizable)",
+            }
+          ]);
+        }
       }
+    } catch (e) {
+      console.error("Error during seeding:", e);
     }
   }
 
